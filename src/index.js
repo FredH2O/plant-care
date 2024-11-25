@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
-
+import { BrowserRouter } from "react-router-dom";
 const theme = createTheme({
   palette: {
     primary: {
@@ -36,12 +36,14 @@ const theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ThemeProvider>
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ThemeProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
