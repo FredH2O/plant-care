@@ -7,6 +7,7 @@ import {
   Menu,
   MenuItem,
   Button,
+  Box,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useLocation } from "react-router-dom";
@@ -22,16 +23,35 @@ export default function Header() {
   return (
     <AppBar position="sticky">
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Plant Care
-        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            flexGrow: 1,
+            justifyContent: "space-between",
+          }}
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/plantcarelogo.png`}
+            alt="Plant Care Logo"
+            style={{ height: "50px", marginRight: "10px" }}
+          />
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            Plant Care
+          </Typography>
+        </Box>
 
         <IconButton
           edge="end"
           color="inherit"
           aria-label="menu"
           onClick={handleMenuOpen}
-          sx={{ display: { xs: "block", sm: "none" } }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            mx: "auto",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
           <MenuIcon />
         </IconButton>
