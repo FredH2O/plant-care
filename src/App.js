@@ -11,6 +11,7 @@ function App() {
       sx={{
         display: "flex",
         flexDirection: "column",
+        width: "100%",
         maxWidth: "1200px",
         mx: "auto",
         p: 1,

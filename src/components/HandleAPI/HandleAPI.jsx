@@ -4,6 +4,7 @@ import {
   Button,
   Box,
   Grid2,
+  Container,
 } from "@mui/material";
 import { useState, useEffect } from "react";
 import PlantCard from "../Card/Card";
@@ -60,22 +61,26 @@ const HandleAPI = ({ axios }) => {
 
   return (
     <div>
-      {/* Category Buttons */}
-      <Box sx={{ mb: 2 }}>
-        {categories.map((categoryObj, index) => (
-          <Button
-            key={index}
-            variant={
-              selectedCategory === categoryObj.Category
-                ? "contained"
-                : "outlined"
-            }
-            onClick={() => handleCategoryClick(categoryObj.Category)}
-          >
-            {categoryObj.Category}
-          </Button>
-        ))}
-      </Box>
+      <Container maxWidth="lg">
+        <Grid2 mt={3.5}>
+          <Box sx={{ mb: 2 }}>
+            {categories.map((categoryObj, index) => (
+              <Button
+                sx={{ m: 0.5 }}
+                key={index}
+                variant={
+                  selectedCategory === categoryObj.Category
+                    ? "contained"
+                    : "outlined"
+                }
+                onClick={() => handleCategoryClick(categoryObj.Category)}
+              >
+                {categoryObj.Category}
+              </Button>
+            ))}
+          </Box>
+        </Grid2>
+      </Container>
 
       {/* Loading Indicator */}
       {loading && <CircularProgress />}
@@ -85,13 +90,20 @@ const HandleAPI = ({ axios }) => {
 
       {/* Plant Cards */}
       {!loading && plants.length > 0 && (
-        <Grid2 container spacing={4}>
-          {plants.map((plant) => (
-            <Grid2 item xs={12} sm={6} md={4} key={plant.id}>
-              <PlantCard plant={plant} />
-            </Grid2>
-          ))}
-        </Grid2>
+        <Container maxWidth="lg" sx={{ width: "100%", padding: 0 }}>
+          <Grid2
+            container
+            spacing={1}
+            sx={{ width: "100%" }}
+            justifyContent={"center"}
+          >
+            {plants.map((plant) => (
+              <Grid2 item xs={12} sm={6} md={4} key={plant.id}>
+                <PlantCard plant={plant} />
+              </Grid2>
+            ))}
+          </Grid2>
+        </Container>
       )}
 
       {/* No Plants Found */}
