@@ -61,8 +61,25 @@ const Footer = () => {
           </Grid2>
 
           <Grid2 xs={12} sm={4}>
-            <Typography variant="h6"></Typography>
-            <Typography></Typography>
+            <Typography variant="h6" component="h3" gutterBottom>
+              Follow Us
+            </Typography>
+            <Typography variant="body2" component="p">
+              Stay connected with us on social media for more updates.
+            </Typography>
+            <Typography variant="body2" component="div">
+              <Link href="#" color="inherit" underline="hover">
+                Facebook
+              </Link>
+              <br />
+              <Link href="#" color="inherit" underline="hover">
+                Instagram
+              </Link>
+              <br />
+              <Link href="#" color="inherit" underline="hover">
+                Twitter
+              </Link>
+            </Typography>
           </Grid2>
         </Grid2>
       </Container>

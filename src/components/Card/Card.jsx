@@ -4,26 +4,35 @@ import {
   CardMedia,
   Typography,
   Button,
+  Container,
+  Grid2,
 } from "@mui/material";
 
 export default function PlantCard({ plant }) {
+  console.log(plant.img);
+  console.log(plant);
   return (
-    <Card sx={{ maxWidth: 345, margin: "auto", mt: 4 }}>
-      <CardMedia component="img" height="140" image="" alt="" />
+    <Card sx={{ maxWidth: 350, margin: "auto", mt: 4 }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image={plant.Img}
+        alt={plant["Common name"]?.[0]}
+      />
 
       <CardContent>
         <Typography variant="h5" component="h2" gutterBottom>
-          "plant.name here"
+          {plant["Common name"]?.[0]}
         </Typography>
 
         <Typography variant="subtitle" component="p" color="textSecondary">
-          "plant.name here"
+          {plant.common_name}
         </Typography>
 
         <Typography variant="body2" component="p" sx={{ mt: 2 }}>
-          Water every{" "}
-          <Typography component="span" color="primary">
-            "plant.water{" "}
+          How often to water ?
+          <Typography m={1} component="span" color="primary">
+            {plant.watering}
           </Typography>
         </Typography>
 
