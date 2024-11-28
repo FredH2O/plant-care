@@ -5,6 +5,7 @@ import {
   Typography,
   Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function PlantCard({ plant }) {
   // console.log(plant.Img);
@@ -71,7 +72,13 @@ export default function PlantCard({ plant }) {
           </Typography>
         </Typography>
 
-        <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+        <Button
+          variant="contained"
+          color="primary"
+          href="http://www.tropicopia.com/house-plant/"
+          target="_blank"
+          sx={{ mt: 2 }}
+        >
           Learn More?
         </Button>
       </CardContent>

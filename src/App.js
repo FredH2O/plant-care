@@ -4,6 +4,8 @@ import { Box } from "@mui/material";
 import Footer from "./components/Footer/Footer.jsx";
 import axios from "axios";
 import HandleAPI from "./components/HandleAPI/HandleAPI.jsx";
+import { Route, Routes } from "react-router-dom";
+import Guide from "./components/Guide/Guide.jsx";
 
 function App() {
   return (
@@ -20,9 +22,11 @@ function App() {
     >
       <Header />
       <Box sx={{ flex: 1 }}>
-        <HandleAPI axios={axios} />
+        <Routes>
+          <Route path="/" element={<HandleAPI axios={axios} />} />
+          <Route path="Guide" element={<Guide />} />
+        </Routes>
       </Box>
-
       <Footer />
     </Box>
   );

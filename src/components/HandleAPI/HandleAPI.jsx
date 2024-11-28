@@ -69,7 +69,7 @@ const HandleAPI = ({ axios }) => {
   };
 
   return (
-    <div>
+    <Box sx={{ textAlign: "center" }}>
       <Box
         sx={{
           display: "flex",
@@ -79,20 +79,27 @@ const HandleAPI = ({ axios }) => {
           p: 1,
         }}
       >
-        {categories.map((categoryObj, index) => (
-          <Button
-            sx={{ m: 0.5 }}
-            key={index}
-            variant={
-              selectedCategory === categoryObj.Category
-                ? "contained"
-                : "outlined"
-            }
-            onClick={() => handleCategoryClick(categoryObj.Category)}
-          >
-            {categoryObj.Category}
-          </Button>
-        ))}
+        {categories && categories.length > 0 ? (
+          categories.map((categoryObj, index) => (
+            <Button
+              sx={{
+                m: 0.5,
+                fontSize: { xs: "0.7rem", sm: "1rem", md: "1.2rem" },
+              }}
+              key={index}
+              variant={
+                selectedCategory === categoryObj.Category
+                  ? "contained"
+                  : "outlined"
+              }
+              onClick={() => handleCategoryClick(categoryObj.Category)}
+            >
+              {categoryObj.Category}
+            </Button>
+          ))
+        ) : (
+          <CircularProgress />
+        )}
       </Box>
 
       {loading && <CircularProgress />}
@@ -117,9 +124,9 @@ const HandleAPI = ({ axios }) => {
       )}
 
       {!loading && plants.length === 0 && !error && (
-        <Typography>No plants found for this category.</Typography>
+        <Typography>Please choose a category.</Typography>
       )}
-    </div>
+    </Box>
   );
 };
 
