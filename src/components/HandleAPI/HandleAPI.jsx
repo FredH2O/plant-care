@@ -84,7 +84,7 @@ const HandleAPI = ({ axios }) => {
             <Button
               sx={{
                 m: 0.5,
-                fontSize: { xs: "0.7rem", sm: "1rem", md: "1.2rem" },
+                fontSize: { xs: "0.7rem", sm: "0.8rem", md: "0.9rem" },
               }}
               key={index}
               variant={
