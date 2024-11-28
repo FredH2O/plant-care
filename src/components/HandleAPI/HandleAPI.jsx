@@ -6,6 +6,7 @@ import {
   Grid2,
   Container,
 } from "@mui/material";
+
 import { useState, useEffect } from "react";
 import PlantCard from "../Card/Card";
 
@@ -24,6 +25,10 @@ const HandleAPI = ({ axios }) => {
     },
   };
 
+  {
+    /**********************************************************************/
+  }
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -36,6 +41,10 @@ const HandleAPI = ({ axios }) => {
 
     fetchCategories();
   }, []);
+
+  {
+    /*********************************************************************/
+  }
 
   const fetchPlantsByCategory = async (category) => {
     setLoading(true);
@@ -61,34 +70,35 @@ const HandleAPI = ({ axios }) => {
 
   return (
     <div>
-      <Container maxWidth="lg">
-        <Grid2 mt={3.5}>
-          <Box sx={{ mb: 2 }}>
-            {categories.map((categoryObj, index) => (
-              <Button
-                sx={{ m: 0.5 }}
-                key={index}
-                variant={
-                  selectedCategory === categoryObj.Category
-                    ? "contained"
-                    : "outlined"
-                }
-                onClick={() => handleCategoryClick(categoryObj.Category)}
-              >
-                {categoryObj.Category}
-              </Button>
-            ))}
-          </Box>
-        </Grid2>
-      </Container>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          m: 1,
+          p: 1,
+        }}
+      >
+        {categories.map((categoryObj, index) => (
+          <Button
+            sx={{ m: 0.5 }}
+            key={index}
+            variant={
+              selectedCategory === categoryObj.Category
+                ? "contained"
+                : "outlined"
+            }
+            onClick={() => handleCategoryClick(categoryObj.Category)}
+          >
+            {categoryObj.Category}
+          </Button>
+        ))}
+      </Box>
 
-      {/* Loading Indicator */}
       {loading && <CircularProgress />}
 
-      {/* Error Message */}
       {error && <Typography color="error">{error}</Typography>}
 
-      {/* Plant Cards */}
       {!loading && plants.length > 0 && (
         <Container maxWidth="lg" sx={{ width: "100%", padding: 0 }}>
           <Grid2
@@ -106,7 +116,6 @@ const HandleAPI = ({ axios }) => {
         </Container>
       )}
 
-      {/* No Plants Found */}
       {!loading && plants.length === 0 && !error && (
         <Typography>No plants found for this category.</Typography>
       )}

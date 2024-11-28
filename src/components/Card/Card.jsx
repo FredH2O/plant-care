@@ -36,17 +36,41 @@ export default function PlantCard({ plant }) {
       />
       <CardContent>
         <Typography variant="h5" component="h2" gutterBottom>
-          {plant["Common name"]?.[0]}
+          {plant["Latin name"]}
         </Typography>
-        <Typography variant="subtitle" component="p" color="textSecondary">
-          {plant.common_name}
-        </Typography>
+
+        {plant["Common name"] ? (
+          <Typography variant="subtitle" component="p" color="textSecondary">
+            <Typography component={"i"}>Common name: </Typography>
+            <Typography component="span" sx={{ fontWeight: "bold" }}>
+              {plant["Common name"]?.[0]}
+              {plant["Common name"]?.[1]
+                ? `, ${plant["Common name"]?.[1]}`
+                : null}
+            </Typography>
+          </Typography>
+        ) : null}
+
+        {plant["Other names"] ? (
+          <Typography variant="subtitle" component="p" color="textSecondary">
+            <Typography component={"i"}>Other names: </Typography>
+            <Typography component="span" sx={{ fontWeight: "bold" }}>
+              {plant["Other names"]}
+            </Typography>
+          </Typography>
+        ) : null}
+
         <Typography variant="body2" component="p" sx={{ mt: 2 }}>
-          How often to water?
-          <Typography m={1} component="span" color="primary">
-            {plant.watering}
+          <strong>Preferred Climate:</strong> {plant.Climat}
+          <br />
+          <strong>Family:</strong> {plant.Family}
+          <br />
+          <strong>Origin:</strong>
+          <Typography m={1} component="span" color="secondary">
+            {plant.Origin}
           </Typography>
         </Typography>
+
         <Button variant="contained" color="primary" sx={{ mt: 2 }}>
           Learn More?
         </Button>
