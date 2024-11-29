@@ -69,7 +69,11 @@ const HandleAPI = ({ axios }) => {
   };
 
   return (
-    <Box sx={{ textAlign: "center" }}>
+    <Box
+      sx={{ textAlign: "center" }}
+      minHeight={{ xs: "56vh", sm: "54vh", md: "75vh" }}
+      height="100%"
+    >
       <Box
         sx={{
           display: "flex",

@@ -6,6 +6,8 @@ import axios from "axios";
 import HandleAPI from "./components/HandleAPI/HandleAPI.jsx";
 import { Route, Routes } from "react-router-dom";
 import Guide from "./components/Guide/Guide.jsx";
+import Home from "./components/Home/Home.jsx";
+import ContactForm from "./components/ContactForm/ContactForm.jsx";
 
 function App() {
   return (
@@ -23,11 +25,13 @@ function App() {
       <Header />
       <Box sx={{ flex: 1 }}>
         <Routes>
-          <Route path="/" element={<HandleAPI axios={axios} />} />
-          <Route path="Guide" element={<Guide />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<HandleAPI axios={axios} />} />
+          <Route path="/guide" element={<Guide />} />
+          <Route path="/contact" element={<ContactForm />} />
         </Routes>
+        <Footer />
       </Box>
-      <Footer />
     </Box>
   );
 }

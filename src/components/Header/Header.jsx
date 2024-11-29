@@ -65,7 +65,7 @@ export default function Header() {
             Home
           </MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/plant-care">
-            Plant Guide
+            Guide
           </MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/about">
             About
@@ -84,20 +84,20 @@ export default function Header() {
           Home
         </Button>
         <Button
-          color={isActive("/plant-care") ? "secondary" : "inherit"}
+          color={isActive("/guide") ? "secondary" : "inherit"}
           component={Link}
-          to="/plant-care"
+          to="/guide"
           sx={{ display: { xs: "none", sm: "block" } }}
         >
-          Plant Care
+          Guide
         </Button>
         <Button
-          color={isActive("/about") ? "secondary" : "inherit"}
+          color={isActive("/search") ? "secondary" : "inherit"}
           component={Link}
-          to="/about"
+          to="/search"
           sx={{ display: { xs: "none", sm: "block" } }}
         >
-          About
+          Search Plant
         </Button>
         <Button
           color={isActive("/contact") ? "secondary" : "inherit"}

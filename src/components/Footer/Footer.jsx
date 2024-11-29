@@ -53,11 +53,11 @@ const Footer = () => {
               <br />
               <Link
                 component={RouterLink}
-                to={"/about"}
+                to={"/search"}
                 color="inherit"
                 underline="hover"
               >
-                About
+                Search
               </Link>
               <br />
               <Link

@@ -14,12 +14,12 @@ export default function PlantCard({ plant }) {
   return (
     <Card
       sx={{
-        width: 350,
-        maxWidth: 350,
+        width: "350px",
+        maxWidth: "350px",
         margin: "auto",
         mt: 2,
         mb: 5,
-        height: "auto",
+        height: "600px",
         display: "flex",
         flexDirection: "column",
       }}
@@ -28,14 +28,24 @@ export default function PlantCard({ plant }) {
         component="img"
         height="250px"
         sx={{
-          objectFit: "cover",
+          objectFit: "contain",
           width: "100%",
           height: "250px",
+          p: 1,
         }}
         image={plant.Img}
         alt={plant["Common name"]?.[0]}
       />
-      <CardContent>
+
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          flex: 1,
+          alignItems: "center",
+        }}
+      >
         <Typography variant="h5" component="h2" gutterBottom>
           {plant["Latin name"]}
         </Typography>
@@ -77,9 +87,9 @@ export default function PlantCard({ plant }) {
           color="primary"
           href="http://www.tropicopia.com/house-plant/"
           target="_blank"
-          sx={{ mt: 2 }}
+          sx={{ mt: 2, width: "50%" }}
         >
-          Learn More?
+          Learn More
         </Button>
       </CardContent>
     </Card>
