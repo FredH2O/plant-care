@@ -24,9 +24,9 @@ const Home = () => {
           }}
         >
           <Typography component={"h2"} variant="h4">
-            About Us
+            Home
           </Typography>
-          <Typography component="p" variant="body1" p={1} textAlign={"justify"}>
+          <Typography component="p" variant="body1" p={2} textAlign={"center"}>
             Welcome to Plant-Care, where our mission is to inspire and empower
             plant lovers of all levels to nurture their green companions and
             contribute to a healthier, more sustainable planet. We believe that
@@ -34,14 +34,16 @@ const Home = () => {
             nature, improve our well-being, and create a cleaner, greener world
             for future generations. At Plant-Care, we're passionate about
             providing the tools, knowledge, and encouragement you need to keep
-            your plants thriving. Whether you're a seasoned gardener or just
-            starting your plant care journey, our app offers expert tips,
-            tailored guidance, and a supportive community to help you along the
-            way. By taking care of our plants, we also take a step towards
-            improving air quality, reducing carbon footprints, and fostering a
-            sense of harmony with the environment. Join us as we cultivate not
-            only vibrant, healthy plants but also a shared commitment to making
-            the world a better, greener place — one leaf at a time.
+            your plants thriving. <br />
+            <br />
+            Whether you're a seasoned gardener or just starting your plant care
+            journey, our app offers expert tips, tailored guidance, and a
+            supportive community to help you along the way. By taking care of
+            our plants, we also take a step towards improving air quality,
+            reducing carbon footprints, and fostering a sense of harmony with
+            the environment. Join us as we cultivate not only vibrant, healthy
+            plants but also a shared commitment to making the world a better,
+            greener place — one leaf at a time.
           </Typography>
         </Grid2>
         <Grid2
