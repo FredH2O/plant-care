@@ -31,7 +31,7 @@ Ensure you have Node.js and npm installed on your system. You can download them 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/FredH2O/plant-care.git
    ```
 2. Navigate to the project directory:
    ```bash
