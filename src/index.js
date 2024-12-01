@@ -36,7 +36,7 @@ const theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/plant-care">
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <React.StrictMode>
