@@ -26,7 +26,13 @@ const Home = () => {
           <Typography component={"h2"} variant="h4">
             Home
           </Typography>
-          <Typography component="p" variant="body1" p={2} textAlign={"center"}>
+          <Typography
+            component="p"
+            variant="body1"
+            p={2}
+            sx={{ wordSpacing: 5 }}
+            textAlign={"center"}
+          >
             Welcome to Plant-Care, where our mission is to inspire and empower
             plant lovers of all levels to nurture their green companions and
             contribute to a healthier, more sustainable planet. We believe that
