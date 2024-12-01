@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FredH2O/plant-care.git/static/css/main.9760e8e4.css",
+    "main.js": "/FredH2O/plant-care.git/static/js/main.4a5af7dd.js",
+    "static/js/453.34b81ec9.chunk.js": "/FredH2O/plant-care.git/static/js/453.34b81ec9.chunk.js",
+    "index.html": "/FredH2O/plant-care.git/index.html",
+    "main.9760e8e4.css.map": "/FredH2O/plant-care.git/static/css/main.9760e8e4.css.map",
+    "main.4a5af7dd.js.map": "/FredH2O/plant-care.git/static/js/main.4a5af7dd.js.map",
+    "453.34b81ec9.chunk.js.map": "/FredH2O/plant-care.git/static/js/453.34b81ec9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9760e8e4.css",
+    "static/js/main.4a5af7dd.js"
+  ]
+}
