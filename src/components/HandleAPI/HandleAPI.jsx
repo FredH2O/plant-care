@@ -7,7 +7,7 @@ import {
   Container,
 } from "@mui/material";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import PlantCard from "../Card/Card";
 
 const HandleAPI = ({ axios }) => {
@@ -18,16 +18,15 @@ const HandleAPI = ({ axios }) => {
   const [error, setError] = useState(null);
 
   const categoriesURL = "https://house-plants2.p.rapidapi.com/categories";
-  const options = {
-    headers: {
-      "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
-      "X-RapidAPI-Host": "house-plants2.p.rapidapi.com",
-    },
-  };
-
-  {
-    /**********************************************************************/
-  }
+  const options = useMemo(
+    () => ({
+      headers: {
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
+        "X-RapidAPI-Host": "house-plants2.p.rapidapi.com",
+      },
+    }),
+    []
+  );
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -40,11 +39,7 @@ const HandleAPI = ({ axios }) => {
     };
 
     fetchCategories();
-  }, []);
-
-  {
-    /*********************************************************************/
-  }
+  }, [axios, options]);
 
   const fetchPlantsByCategory = async (category) => {
     setLoading(true);

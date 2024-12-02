@@ -19,8 +19,8 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginTop: { sm: "25px" },
-            marginBottom: { sm: "25px" },
+            marginTop: { sm: "25px", xs: 3 },
+            marginBottom: { sm: "25px", xs: 3 },
           }}
         >
           <Typography component={"h2"} variant="h4">
@@ -30,8 +30,8 @@ const Home = () => {
             component="p"
             variant="body1"
             p={2}
-            sx={{ wordSpacing: 5 }}
-            textAlign={"center"}
+            sx={{ wordSpacing: 3 }}
+            textAlign={{ xs: "justify", sm: "center", md: "center" }}
           >
             Welcome to Plant-Care, where our mission is to inspire and empower
             plant lovers of all levels to nurture their green companions and
@@ -64,6 +64,7 @@ const Home = () => {
               height: "400px",
               width: "100%",
               borderRadius: "25px",
+              mb: 5,
             }}
           />
         </Grid2>

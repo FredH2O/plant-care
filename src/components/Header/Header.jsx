@@ -64,11 +64,11 @@ export default function Header() {
           <MenuItem onClick={handleMenuClose} component={Link} to="/">
             Home
           </MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/plant-care">
+          <MenuItem onClick={handleMenuClose} component={Link} to="/guide">
             Guide
           </MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/about">
-            About
+          <MenuItem onClick={handleMenuClose} component={Link} to="/search">
+            Search
           </MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/contact">
             Contact

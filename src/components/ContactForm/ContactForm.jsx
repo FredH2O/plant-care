@@ -6,7 +6,6 @@ import {
   Box,
   Modal,
   Fade,
-  Backdrop,
 } from "@mui/material";
 import { useState } from "react";
 
